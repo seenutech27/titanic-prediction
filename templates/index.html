@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" type="text/css" href="{{ url_for('static', filename='styles.css') }}">
+    <title>Titanic Survival Prediction</title>
+</head>
+<body>
+    <div class="main">
+        <h1>Titanic Survival Prediction</h1>
+        <h3>Enter Passenger Details</h3>
+        <form action="/predict" method="post">
+            <label for="Pclass">Passenger Class (1, 2, 3):</label>
+            <input type="number" name="Pclass" required placeholder="Enter Passenger Class">
+            
+            <label for="Sex">Sex:</label>
+            <select name="Sex" required>
+                <option value="male">Male</option>
+                <option value="female">Female</option>
+            </select>
+            
+            <label for="Age">Age:</label>
+            <input type="number" step="0.1" name="Age" required placeholder="Enter Age">
+            
+            <label for="SibSp">Number of Siblings/Spouses:</label>
+            <input type="number" name="SibSp" required placeholder="Enter Number of Siblings/Spouses">
+            
+            <label for="Parch">Number of Parents/Children:</label>
+            <input type="number" name="Parch" required placeholder="Enter Number of Parents/Children">
+            
+            <label for="Fare">Fare:</label>
+            <input type="number" step="0.01" name="Fare" required placeholder="Enter Fare">
+            
+            <label for="Embarked">Embarked:</label>
+            <select name="Embarked" required>
+                <option value="C">Cherbourg</option>
+                <option value="Q">Queenstown</option>
+                <option value="S">Southampton</option>
+            </select>
+            
+            <div class="wrap">
+                <button type="submit">Predict</button>
+            </div>
+        </form>
+    </div>
+</body>
+</html>
